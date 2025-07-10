@@ -3,6 +3,7 @@ project(MoneyGame)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(MoneyGame main.cpp
-        player.cpp
-        player.h)
+add_executable(MoneyGame Source/main.cpp
+        Source/player.cpp
+        "Source/player.h"
+        Source/main.h)

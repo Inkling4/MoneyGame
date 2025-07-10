@@ -7,7 +7,16 @@
 
 
 
-class player {
+class player
+{
+private:
+    double money;
+
+
+public:
+    //Constructor
+    player();
+
 
 };
 
