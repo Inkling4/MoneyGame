@@ -6,4 +6,6 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(MoneyGame Source/main.cpp
         Source/player.cpp
         "Source/player.h"
-        Source/main.h)
+        Source/main.h
+        Source/rps.cpp
+        Source/rps.h)
