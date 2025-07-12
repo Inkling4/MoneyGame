@@ -8,8 +8,6 @@
 
 RPSResult rpsGame::rpsBattle(const enum RPSHands inPlayerHand, const enum RPSHands inOpponentHand)
 {
-
-
     switch (inPlayerHand)
     {
         case (rock):
@@ -51,3 +49,6 @@ RPSResult rpsGame::rpsBattle(const enum RPSHands inPlayerHand, const enum RPSHan
     }
 
 }
+
+
+

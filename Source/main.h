@@ -8,11 +8,11 @@
 #endif //MAIN_H
 
 //Forward declarations
-class rpsGame;
+class player;
 
 
 
 //References to objects
 
-//Rock Paper Scissors class
-inline rpsGame* RPS;
+inline player* PlayerRef;
+

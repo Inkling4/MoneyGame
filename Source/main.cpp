@@ -5,22 +5,21 @@
 #include <iostream>
 #include "rps.h"
 
-    player Player0;
-    rpsGame RockPaperScissors;
+player Player0;
 
 
 //Where you start
 void mainMenu()
 {
-    enum RPSHands PlayerHand = rock;
-    enum RPSHands OpponentHand = scissors;
-    std::cout << RPS->rpsBattle(PlayerHand, OpponentHand);
+
+
+
 
 }
 
 void assignObjectReferences()
 {
-    RPS = &RockPaperScissors;
+    PlayerRef = &Player0;
 }
 
 

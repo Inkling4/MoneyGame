@@ -8,4 +8,6 @@ add_executable(MoneyGame Source/main.cpp
         "Source/player.h"
         Source/main.h
         Source/rps.cpp
-        Source/rps.h)
+        Source/rps.h
+        Source/gameStatics.cpp
+        Source/gameStatics.h)
