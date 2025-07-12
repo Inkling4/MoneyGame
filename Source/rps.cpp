@@ -5,39 +5,49 @@
 #include "rps.h"
 #include <iostream>
 
-int rpsBattle(enum RPSHands inPlayerHand, enum RPSHands inOpponentHand)
+
+RPSResult rpsGame::rpsBattle(const enum RPSHands inPlayerHand, const enum RPSHands inOpponentHand)
 {
 
 
     switch (inPlayerHand)
     {
-        case (0):
+        case (rock):
             switch (inOpponentHand)
             {
-                case (0): return 2;
-                case (1): return 1;
-                case(2): return 0;
+                case (rock): return tie;
+                case (paper): return loss;
+                case (scissors): return win;
                 default:
                     std::cout << "Invalid opponent hand!\n";
-                    return -1;
+                    return invalid;
             }
 
-        case (1):
+        case (paper):
             switch (inOpponentHand)
             {
-                case (0): return 2;
-                case (1): return 1;
-                case(2): return 0;
+                case (rock): return win;
+                case (paper): return tie;
+                case (scissors): return loss;
                 default:
                     std::cout << "Invalid opponent hand!\n";
-                    return -1;
+                    return invalid;
             }
 
-        case (2):
+        case (scissors):
+            switch (inOpponentHand)
+            {
+                case (rock): return loss;
+                case (paper): return win;
+                case (scissors): return tie;
+                default:
+                    std::cout << "Invalid opponent hand!\n";
+                    return invalid;
+            }
 
     default:
         std::cout << "ERR: Invalid player hand!\n";
-        return -1;
+        return invalid;
     }
 
 }

@@ -7,4 +7,12 @@
 #define MAIN_H
 #endif //MAIN_H
 
+//Forward declarations
+class rpsGame;
 
+
+
+//References to objects
+
+//Rock Paper Scissors class
+inline rpsGame* RPS;
