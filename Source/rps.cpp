@@ -4,7 +4,6 @@
 
 #include "rps.h"
 #include <iostream>
-#include <climits>
 #include "terminalCommands.h"
 #include "gameStatics.h"
 #include <string>
@@ -107,7 +106,7 @@ void rpsGame::playRPS()
     }
 
     cin.clear();
-    cin.ignore(INT_MAX, '\n');
+    cin.ignore(255, '\n');
     //Randomizes opponent hand
     switch (gameStatics::rng(0,2))
     {
@@ -142,13 +141,25 @@ void rpsGame::playRPS()
             PlayerRef->loseMoney(Bet);
             break;
         case (tied):
-            cout << "It's a tie!\nYour bet has been returned to you.";
+            cout << "It's a tie!\nYour bet has been returned to you.\n";
             break;
     }
-    cout << "Press enter to go back to the main menu.";
-    //Pauses runtime until you press enter
-    cin.clear();
-    cin.ignore(INT_MAX, '\n');
+    cout << "You now have $" << PlayerRef->getMoneyCount() << ".\nDo you want to play again? (y/n): ";
+    if (char PlayerInput; cin >> PlayerInput)
+    {
+        PlayerInput = tolower(PlayerInput);
+        if (PlayerInput == 'y')
+        {
+            cin.ignore(255, '\n');
+            playRPS();
+        }
+        else
+        {
+            cout << "Press enter to go back to the main menu.";
+            cin.ignore(255, '\n');
+        }
+    }
+
 }
 
 

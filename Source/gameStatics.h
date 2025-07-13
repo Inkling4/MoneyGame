@@ -20,6 +20,7 @@ public:
 
     //Makes user input a bet. Returns the bet in question, and clears the cin buffer.
     //Makes sure player can afford the bet.
+    //Returns 0 if the player chooses to quit to menu instead.
     static int bet();
 
 };
