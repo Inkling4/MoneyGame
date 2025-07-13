@@ -18,7 +18,7 @@ enum RPSResult
 {
     win,
     loss,
-    tie
+    tied
 };
 
 

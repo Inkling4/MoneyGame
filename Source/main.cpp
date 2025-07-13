@@ -11,7 +11,8 @@ player Player0;
 //Where you start
 void mainMenu()
 {
-
+    std::cout << "This text should disappear.";
+    rpsGame::playRPS();
 
 
 

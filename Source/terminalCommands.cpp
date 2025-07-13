@@ -3,19 +3,14 @@
 //
 
 #include "terminalCommands.h"
-#include <cstdlib>
+#include <cstdio>
 
-bool isWindows = false;
+
 
 void clearTerminal()
 {
-    if (isWindows)
-    {
-        system("cls");
-    }
-    else
-    {
-        system("clear");
-    }
+    std::printf(
+  "\033[2J" // clear the screen
+  "\033[1;1H" );  // move cursor home
 
 }

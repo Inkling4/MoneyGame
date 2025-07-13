@@ -5,7 +5,8 @@
 #include "rps.h"
 #include <iostream>
 #include "terminalCommands.h"
-
+#include "gameStatics.h"
+#include <string>
 
 RPSResult rpsGame::rpsBattle(const RPSHands inPlayerHand, const RPSHands inOpponentHand)
 {
@@ -14,19 +15,19 @@ RPSResult rpsGame::rpsBattle(const RPSHands inPlayerHand, const RPSHands inOppon
         case (rock):
             switch (inOpponentHand)
             {
-                case (rock): return tie;
+                case (rock): return tied;
                 case (paper): return loss;
                 case (scissors): return win;
-                default: return tie;
+                default: return tied;
             }
 
         case (paper):
             switch (inOpponentHand)
             {
                 case (rock): return win;
-                case (paper): return tie;
+                case (paper): return tied;
                 case (scissors): return loss;
-                default: return tie;
+                default: return tied;
             }
 
         case (scissors):
@@ -34,11 +35,11 @@ RPSResult rpsGame::rpsBattle(const RPSHands inPlayerHand, const RPSHands inOppon
             {
                 case (rock): return loss;
                 case (paper): return win;
-                case (scissors): return tie;
-                default: return tie;
+                case (scissors): return tied;
+                default: return tied;
             }
         default:
-            return tie;
+            return tied;
     }
 
 
@@ -52,42 +53,88 @@ void rpsGame::playRPS()
 
 
     RPSHands PlayerHand;
-
+    RPSHands OpponentHand;
+    string OpponentHandString;
 
     clearTerminal();
 
     cout << "Welcome to the Rock, Paper, Scissors game!\n";
     cout << "You will play against a blind toddler. Let's go gambling!\n";
-    cout << "Input hand (r/p/s): ";
 
-    char PlayerHandInput;
-    if (cin >> PlayerHandInput)
+    bool isSelectionDone = false;
+    while (!isSelectionDone)
     {
-        PlayerHandInput = tolower(PlayerHandInput);
-        switch (PlayerHandInput)
+        cout << "Input hand (r/p/s): ";
+        if (char PlayerHandInput; cin >> PlayerHandInput)
         {
-            case ('r'):
-                PlayerHand = rock;
-                break;
-            case ('p'):
-                PlayerHand = paper;
-                break;
-            case ('s'):
-                PlayerHand = scissors;
-                break;
-            case ('g'):
-                cout << "\nNo, a gun is not allowed, dummy.\n";
-                break;
-            default:
-                cout << "\nERR: Invalid input! Make sure to only input r, p, or s.\n";
-                break;
+            PlayerHandInput = tolower(PlayerHandInput);
+            switch (PlayerHandInput)
+            {
+                case ('r'):
+                    PlayerHand = rock;
+                    isSelectionDone = true;
+                    break;
+                case ('p'):
+                    PlayerHand = paper;
+                    isSelectionDone = true;
+                    break;
+                case ('s'):
+                    PlayerHand = scissors;
+                    isSelectionDone = true;
+                    break;
+                case ('g'):
+                    cout << "\nNo, a gun is not allowed, dummy.\n";
+                    break;
+                default:
+                    cout << "\nERR: Invalid input! Make sure to only input r, p, or s.\n";
+                    break;
+            }
+        }
+        //This else statement is triggered if the char input is invalid
+        else
+        {
+            cout << "\nERR: Invalid input! Make sure to only input r, p, or s.\n";
         }
     }
-    //This else statement is triggered if the char input is invalid
-    else
+
+    //Randomizes opponent hand
+    switch (gameStatics::rng(0,2))
     {
-        cout << "\nERR: Invalid input! Make sure to only input r, p, or s.\n";
+        case (0):
+            OpponentHand = rock;
+            OpponentHandString = "rock";
+            break;
+        case (1):
+            OpponentHand = paper;
+            OpponentHandString = "paper";
+            break;
+        case (2):
+            OpponentHand = scissors;
+            OpponentHandString = "scissors";
+            break;
+        default:
+            cout << "The opponent selected an invalid hand, check the code in rps.cpp or gameStatics.cpp\n";
+            break;
     }
+
+
+    cout << "The enemy picked " << OpponentHandString << ". ";
+    //Runs the RPS simulation
+    switch (rpsBattle(PlayerHand, OpponentHand))
+    {
+        case (win):
+            cout << "You win!\n";
+            break;
+        case (loss):
+            cout << "You lose!\n";
+            break;
+        case (tied):
+            cout << "It's a tie!\n";
+            break;
+    }
+
+
+
 
 }
 
