@@ -12,4 +12,5 @@ add_executable(MoneyGame Source/main.cpp
         Source/gameStatics.cpp
         Source/gameStatics.h
         Source/terminalCommands.cpp
-        Source/terminalCommands.h)
+        Source/terminalCommands.h
+        Source/games.h)

@@ -29,6 +29,6 @@ private:
     //Returns result from the player's perspective.
     static RPSResult rpsBattle(RPSHands inPlayerHand, RPSHands inOpponentHand);
 public:
-    static int playRPS();
+    static void playRPS();
 };
 

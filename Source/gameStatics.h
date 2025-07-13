@@ -18,5 +18,8 @@ public:
     //Returns a random value between the minimum and max number specified.
     static int rng(int inMinNumber, int inMaxNumber);
 
+    //Makes user input a bet. Returns the bet in question, and clears the cin buffer.
+    //Makes sure player can afford the bet.
+    static int bet();
 
 };

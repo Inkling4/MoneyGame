@@ -8,6 +8,8 @@
 #include "terminalCommands.h"
 #include "gameStatics.h"
 #include <string>
+//For money reasons, access to player object reference
+#include "player.h"
 
 RPSResult rpsGame::rpsBattle(const RPSHands inPlayerHand, const RPSHands inOpponentHand)
 {
@@ -48,7 +50,7 @@ RPSResult rpsGame::rpsBattle(const RPSHands inPlayerHand, const RPSHands inOppon
 
 
 
-int rpsGame::playRPS()
+void rpsGame::playRPS()
 {
     using namespace std;
 
@@ -57,10 +59,14 @@ int rpsGame::playRPS()
     RPSHands OpponentHand;
     string OpponentHandString;
 
+
     clearTerminal();
 
     cout << "Welcome to the Rock, Paper, Scissors game!\n";
     cout << "You will play against a blind toddler. Let's go gambling!\n";
+    int Bet = gameStatics::bet();
+    if (Bet == 0) {return;}
+
 
     bool isSelectionDone = false;
     while (!isSelectionDone)
@@ -119,7 +125,7 @@ int rpsGame::playRPS()
             break;
         default:
             cout << "The opponent selected an invalid hand, check the code in rps.cpp or gameStatics.cpp\n";
-            return 1;
+            return;
     }
 
 
@@ -128,20 +134,21 @@ int rpsGame::playRPS()
     switch (rpsBattle(PlayerHand, OpponentHand))
     {
         case (win):
-            cout << "You win!\n";
+            cout << "You win!\nYou profited $" << Bet << ".\n";
+            PlayerRef->earnMoney(Bet);
             break;
         case (loss):
-            cout << "You lose!\n";
+            cout << "You lose!\nYou lost your bet ($" << Bet << ").\n";
+            PlayerRef->loseMoney(Bet);
             break;
         case (tied):
-            cout << "It's a tie!\n";
+            cout << "It's a tie!\nYour bet has been returned to you.";
             break;
     }
     cout << "Press enter to go back to the main menu.";
     //Pauses runtime until you press enter
     cin.clear();
     cin.ignore(INT_MAX, '\n');
-    return 0;
 }
 
 
