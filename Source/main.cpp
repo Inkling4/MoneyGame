@@ -14,7 +14,7 @@ player Player0;
 /*
  *Game list:
  *Rock Paper Scissors (rps)
- *
+ *Work (work)
  */
 
 
@@ -30,7 +30,7 @@ void mainMenu()
     //String used for menu selection
     string Command = "Uninitialized";
 
-    cout << "You currently have $" << PlayerRef->getMoneyCount() << ".\nPick a game to play! Type \"quit\" to exit the program. \nGame selection:\nRock, Paper, Scissors (rps)\nInput command: ";
+    cout << "You currently have $" << PlayerRef->getMoneyCount() << ".\nPick a game to play! Type \"quit\" to exit the program. \nGame selection:\nWork (work)\nRock, Paper, Scissors (rps)\nInput command: ";
     cin >> Command;
     //Makes input lowercase
     for (int i = 0; i < Command.length(); i++)
@@ -40,7 +40,11 @@ void mainMenu()
 
     if (Command == "rps")
     {
-        rpsGame::playRPS();
+        rps::playRPS();
+    }
+    else if (Command == "work")
+    {
+        work::playWork();
     }
     else if (Command == "exit" || Command == "quit")
     {

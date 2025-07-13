@@ -10,7 +10,7 @@
 //For money reasons, access to player object reference
 #include "player.h"
 
-RPSResult rpsGame::rpsBattle(const RPSHands inPlayerHand, const RPSHands inOpponentHand)
+RPSResult rps::rpsBattle(const RPSHands inPlayerHand, const RPSHands inOpponentHand)
 {
     switch (inPlayerHand)
     {
@@ -49,7 +49,7 @@ RPSResult rpsGame::rpsBattle(const RPSHands inPlayerHand, const RPSHands inOppon
 
 
 
-void rpsGame::playRPS()
+void rps::playRPS()
 {
     using namespace std;
 

@@ -9,7 +9,7 @@
 
 #pragma once
 #include "rps.h"
-
+#include "work.h"
 
 #ifndef GAMES_H
 #define GAMES_H

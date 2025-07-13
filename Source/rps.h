@@ -22,7 +22,7 @@ enum RPSResult
 };
 
 
-class rpsGame
+class rps
 {
 private:
     //Runs RPS simulation with a player and opponent hand input.
