@@ -25,16 +25,10 @@ enum RPSResult
 class rpsGame
 {
 private:
-
-
-public:
-
-    static void playRPS();
-
     //Runs RPS simulation with a player and opponent hand input.
     //Returns result from the player's perspective.
     static RPSResult rpsBattle(RPSHands inPlayerHand, RPSHands inOpponentHand);
-
-
+public:
+    static int playRPS();
 };
 

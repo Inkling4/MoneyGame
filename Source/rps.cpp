@@ -4,6 +4,7 @@
 
 #include "rps.h"
 #include <iostream>
+#include <climits>
 #include "terminalCommands.h"
 #include "gameStatics.h"
 #include <string>
@@ -47,7 +48,7 @@ RPSResult rpsGame::rpsBattle(const RPSHands inPlayerHand, const RPSHands inOppon
 
 
 
-void rpsGame::playRPS()
+int rpsGame::playRPS()
 {
     using namespace std;
 
@@ -84,9 +85,11 @@ void rpsGame::playRPS()
                     break;
                 case ('g'):
                     cout << "\nNo, a gun is not allowed, dummy.\n";
+                    cin.ignore(255, '\n');
                     break;
                 default:
                     cout << "\nERR: Invalid input! Make sure to only input r, p, or s.\n";
+                    cin.ignore(255, '\n');
                     break;
             }
         }
@@ -97,6 +100,8 @@ void rpsGame::playRPS()
         }
     }
 
+    cin.clear();
+    cin.ignore(INT_MAX, '\n');
     //Randomizes opponent hand
     switch (gameStatics::rng(0,2))
     {
@@ -114,7 +119,7 @@ void rpsGame::playRPS()
             break;
         default:
             cout << "The opponent selected an invalid hand, check the code in rps.cpp or gameStatics.cpp\n";
-            break;
+            return 1;
     }
 
 
@@ -132,10 +137,11 @@ void rpsGame::playRPS()
             cout << "It's a tie!\n";
             break;
     }
-
-
-
-
+    cout << "Press enter to go back to the main menu.";
+    //Pauses runtime until you press enter
+    cin.clear();
+    cin.ignore(INT_MAX, '\n');
+    return 0;
 }
 
 
