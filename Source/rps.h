@@ -18,8 +18,7 @@ enum RPSResult
 {
     win,
     loss,
-    tie,
-    invalid
+    tie
 };
 
 
@@ -30,9 +29,11 @@ private:
 
 public:
 
+    static void playRPS();
+
     //Runs RPS simulation with a player and opponent hand input.
     //Returns result from the player's perspective.
-    static enum RPSResult rpsBattle(enum RPSHands inPlayerHand, enum RPSHands inOpponentHand);
+    static RPSResult rpsBattle(RPSHands inPlayerHand, RPSHands inOpponentHand);
 
 
 };
