@@ -74,6 +74,7 @@ int main()
 {
     srand(time(0));
     assignObjectReferences();
+    clearTerminal();
     std::cout << "Welcome to the money making game!\nYou start with $" << PlayerRef->getMoneyCount() << ", which you can use to WIN MORE MONEY!\n\n";
     mainMenu();
 

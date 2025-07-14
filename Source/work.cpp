@@ -9,9 +9,32 @@
 #include <string>
 #include "gameStatics.h"
 
-int amountOfWords = 2; //Change this number to the amount of words in the array below
-std::string wordsArray[amountOfWords] = {"hi", "po"};
-
+int amountOfWords = 22; //Change this number to the amount of words in the array below
+std::string wordsArray[22] =
+    {
+    "GIASFELBREHBER",
+    "fLiPThEBURgers!",
+    "pickles",
+    "FrederickFitzgeraldFazbearTheFifth",
+    "no",
+    "yes",
+    "taxes",
+    "paycheck",
+    "spunchbop",
+    "pizza",
+    "burger",
+    "SupreMarlo",
+    "give-admin-access",
+    "customer",
+    "crime",
+    "capitalism",
+    "wire",
+    "hire",
+    "mire",
+    "dire",
+    "spire",
+    "poopfart"
+    };
 
 
 bool work::inputWordsAndCompare(const std::string solution)
