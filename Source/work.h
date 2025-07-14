@@ -8,14 +8,18 @@
 
 //Game about doing simple tasks for money. No risk.
 
+
+
 class work
 {
-private:
+
     //Asks user to input word, and compares it to input parameter.
-    //Returns true if the input matches the solution.
+    //Returns false if the player wants to quit playing.
     static bool inputWordsAndCompare(std::string solution);
 
+
 public:
+    work();
     static void playWork();
 
 

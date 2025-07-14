@@ -46,7 +46,7 @@ void mainMenu()
     {
         work::playWork();
     }
-    else if (Command == "exit" || Command == "quit")
+    else if (Command == "exit" || Command == "quit" || Command == "stop")
     {
         cout << "You ended the game with $" << PlayerRef->getMoneyCount() << ".\n";
         return;
