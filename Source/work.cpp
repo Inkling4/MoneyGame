@@ -9,8 +9,8 @@
 #include <string>
 #include "gameStatics.h"
 
-int amountOfWords = 22; //Change this number to the amount of words in the array below
-std::string wordsArray[22] =
+const int amountOfWords = 22; //Change this number to the amount of words in the array below
+const std::string wordsArray[22] =
     {
     "GIASFELBREHBER",
     "fLiPThEBURgers!",

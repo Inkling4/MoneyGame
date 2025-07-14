@@ -15,6 +15,7 @@ player Player0;
  *Game list:
  *Rock Paper Scissors (rps)
  *Work (work)
+ *Epic battle of awesome? (dm)
  */
 
 
