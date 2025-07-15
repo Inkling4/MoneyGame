@@ -31,7 +31,7 @@ void mainMenu()
     //String used for menu selection
     string Command = "Uninitialized";
 
-    cout << "You currently have $" << PlayerRef->getMoneyCount() << ".\nPick a game to play! Type \"quit\" to exit the program. \nGame selection:\nWork (work)\nRock, Paper, Scissors (rps)\nInput command: ";
+    cout << "You currently have $" << PlayerRef->getMoneyCount() << ".\nPick a game to play! Type \"quit\" to exit the program. \nGame selection:\nWork (work)\nRock, Paper, Scissors (rps)\nDeathmatch (dm)\nInput command: ";
     cin >> Command;
     //Makes input lowercase
     for (int i = 0; i < Command.length(); i++)
@@ -46,6 +46,10 @@ void mainMenu()
     else if (Command == "work")
     {
         work::playWork();
+    }
+    else if (Command == "dm")
+    {
+        deathmatch::playDeathmatch();
     }
     else if (Command == "exit" || Command == "quit" || Command == "stop")
     {

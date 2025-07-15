@@ -9,7 +9,10 @@
 
 class deathmatch
 {
-    
+    static bool doBattle();
+
+public:
+    static void playDeathmatch();
 
 
 
