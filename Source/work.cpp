@@ -79,6 +79,7 @@ void work::playWork()
     cout << "Welcome to your job! You will be tasked with typing whatever you are told to type.\nFor each word you type correctly, you will earn small amounts of money.\n";
     cin.ignore(255, '\n');
 
+    //Infinite loop until return
     bool alwaysTrue = true;
     while (alwaysTrue)
     {

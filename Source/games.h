@@ -10,6 +10,7 @@
 #pragma once
 #include "rps.h"
 #include "work.h"
+#include "deathmatch.h"
 
 #ifndef GAMES_H
 #define GAMES_H
