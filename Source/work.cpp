@@ -13,7 +13,7 @@ const int amountOfWords = 22; //Change this number to the amount of words in the
 const std::string wordsArray[22] =
     {
     "GIASFELBREHBER",
-    "fLiPThEBURgers!",
+    "fLiPThEBURgers",
     "pickles",
     "FrederickFitzgeraldFazbearTheFifth",
     "no",
