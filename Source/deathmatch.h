@@ -9,6 +9,7 @@
 
 class deathmatch
 {
+    //Does the battle. Returns true if the player won.
     static bool doBattle();
 
 public:

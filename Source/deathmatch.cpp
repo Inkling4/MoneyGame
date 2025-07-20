@@ -7,7 +7,7 @@
 #include "terminalCommands.h"
 #include "gameStatics.h"
 #include "player.h"
-
+#include "fighter.h"
 
 
 
@@ -16,8 +16,11 @@
 bool deathmatch::doBattle()
 {
     using namespace std;
+    fighter playerFighter;
+    fighter enemyFighter(130.f);
+    fighter* pFighter;
 
-
+    
 
 
     return true;

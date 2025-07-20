@@ -3,8 +3,6 @@
 //
 
 #include "fighter.h"
-#include "gameStatics.h"
-
 
 fighter::fighter(float health)
 {
@@ -15,6 +13,8 @@ fighter::fighter()
 {
     mHealth = 100.f;
 }
+
+fighter::~fighter() = default;
 
 
 float fighter::getHealth() const

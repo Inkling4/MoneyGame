@@ -18,7 +18,8 @@ public:
     [[nodiscard]] float getHealth() const;
     //Loses health specified. Returns false if the fighter dies.
     bool takeDamage(float Damage);
-
+    //Destructor. Currently empty.
+    ~fighter();
 };
 
 
