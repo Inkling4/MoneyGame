@@ -8,9 +8,17 @@
 #include "gameStatics.h"
 #include "player.h"
 
+
+
+
+
+
 bool deathmatch::doBattle()
 {
     using namespace std;
+
+
+
 
     return true;
 
@@ -21,8 +29,22 @@ void deathmatch::playDeathmatch()
     using namespace std;
 
     clearTerminal();
-    
-    doBattle();
+    cout << "Welcome to the arena!\nHere you will place a bet on your warrior in the battle against the gladiator!\nYour warrior isn't the strongest, and the odds are not in your favor. The payout however, is very big.\n";
+    bool doesPlayerQuit = false;
+    while (!doesPlayerQuit) //Returns when player doesn't want to/cannot bet
+    {
+        int playerBet = gameStatics::bet();
+        if (playerBet == 0)
+        {
+            doesPlayerQuit = true;
+        }
+        else
+        {
+            doBattle();
+        }
+    }
+
+
 
 
 

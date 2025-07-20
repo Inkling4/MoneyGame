@@ -17,4 +17,6 @@ add_executable(MoneyGame Source/main.cpp
         Source/work.cpp
         Source/work.h
         Source/deathmatch.cpp
-        Source/deathmatch.h)
+        Source/deathmatch.h
+        Source/fighter.cpp
+        Source/fighter.h)
