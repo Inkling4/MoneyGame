@@ -11,6 +11,14 @@
 
 
 
+/*
+ * Plan for deathmatch:
+ * enemy has more health, but the player starts.
+ * Damage is anything between 4-15 damage?
+ * Slightly better damage odds for player?
+ *
+ */
+
 
 
 bool deathmatch::doBattle()
